@@ -45,9 +45,11 @@ ${uncapitalizedEntityName}.${field.formattedName(0)}=${field.label}
 ## Validation
 ##--------------------------------------------------------------------------------------------------------
 #if( $field.isKeyElement() )
+#if(!$field.isAutoIncremented())
 NotNull.${uncapitalizedEntityName}.${field.formattedName(0)}=${field.label} : primary key is required 
+#end
 #else
-#if( $field.isNotNull() || $field.isNotEmpty() ) 
+#if( $field.isNotNull() || $field.isNotEmpty()) 
 NotNull.${uncapitalizedEntityName}.${field.formattedName(0)}=${field.label} is required
 #end
 #end
@@ -59,9 +61,9 @@ ${uncapitalizedEntityName}.${link.formattedFieldName(0)}=${link.formattedFieldNa
 #end
 #end
 
-${uncapitalizedEntityName}.error.delete=Erreur lors de la suppression de ${entity.name} : {0} {1}
-${uncapitalizedEntityName}.error.update=Erreur lors de la mise \u00e0 jour de ${entity.name} : {0} {1}
-${uncapitalizedEntityName}.error.create=Erreur lors de la cr\u00e9ation de ${entity.name} : {0} {1}
+${uncapitalizedEntityName}.error.delete=Error deleting  ${entity.name} : {0} {1}
+${uncapitalizedEntityName}.error.update=Error  when update ${entity.name} : {0} {1}
+${uncapitalizedEntityName}.error.create=Error when create  ${entity.name} : {0} {1}
 
 #end
 
