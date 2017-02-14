@@ -117,9 +117,9 @@
         <property name="basenames">
             <list>
                 <value>classpath:messages</value>
-                 #foreach( $entity in $selectedEntities )
+#foreach( $entity in $selectedEntities )
                 	<value>classpath:messages${entity.name}</value>
-                #end
+#end
             </list>
         </property>
         <property name="defaultEncoding" value="UTF-8"/>
