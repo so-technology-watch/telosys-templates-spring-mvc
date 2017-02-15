@@ -24,8 +24,11 @@ ${uncapitalizedEntityName}.${field.formattedName(0)}=${field.label}
 NotNull.${uncapitalizedEntityName}.${field.formattedName(0)}=${field.label} : primary key is required 
 #end
 #else
-#if( $field.isNotNull() || $field.isNotEmpty()) 
+#if( $field.isNotNull()) 
 NotNull.${uncapitalizedEntityName}.${field.formattedName(0)}=${field.label} is required
+#end
+#if( $field.isNotEmpty()) 
+NotEmpty.${uncapitalizedEntityName}.${field.formattedName(0)}=${field.label} is required
 #end
 #end
 ##--------------------------------------------------------------------------------------------------------
