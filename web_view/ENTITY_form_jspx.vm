@@ -100,7 +100,7 @@
 #else ## --------------------------------------- DATA ELEMENT ici
 ## ------------------
 #if( $listOfItemsVarName != "" ) ## --- Data element and Foreign Key : combo box (never disabled)
-						<form:select id="${htmlId}" path="${htmlName}" cssClass="form-control ${htmlName}" onchange='seeForeign("${htmlName}");'>
+						<form:select id="${htmlId}" path="${htmlName}" cssClass="form-control ${htmlName}">
 							<form:option value=""></form:option>
 							<form:options items="${DOLLAR}{${listOfItemsVarName}}" itemValue="value" itemLabel="label" />
 						</form:select>
@@ -127,7 +127,7 @@
 						<s:url var="url_update" value="/${htmlName}/form/" />
 						<!--<s:url value="/" var="url_home"/>-->
 						<a class="${htmlName} " href="${_}{url_update}"><span
-							class="glyphicon glyphicon-circle-arrow-right"> <s:message code="go" /> </span></a>
+							class="glyphicon glyphicon-circle-arrow-right" onclick='seeForeign("${htmlName}");'> <s:message code="go" /> </span></a>
 						</div>
 #end 
 				</div>
