@@ -100,7 +100,7 @@
 #else ## --------------------------------------- DATA ELEMENT ici
 ## ------------------
 #if( $listOfItemsVarName != "" ) ## --- Data element and Foreign Key : combo box (never disabled)
-						<form:select id="${htmlId}" path="${htmlName}" cssClass="form-control ${htmlName}">
+						<form:select id="${htmlId}" path="${htmlName}" cssClass="form-control $fn.uncapitalize(${field.referencedEntityName})">
 							<form:option value=""></form:option>
 							<form:options items="${DOLLAR}{${listOfItemsVarName}}" itemValue="value" itemLabel="label" />
 						</form:select>
@@ -124,10 +124,10 @@
 				</div>
 #if( $listOfItemsVarName != "" ) ## --- Data element and Foreign Key : combo box (never disabled)
 						<div class=" ">
-						<s:url var="url_update" value="/${htmlName}/form/" />
+						<s:url var="url_update" value="/$fn.uncapitalize(${field.referencedEntityName})/form/" />
 						<!--<s:url value="/" var="url_home"/>-->
-						<a class="${htmlName} " href="${_}{url_update}"><span
-							class="glyphicon glyphicon-circle-arrow-right" onclick='seeForeign("${htmlName}");'> <s:message code="go" /> </span></a>
+						<a class="$fn.uncapitalize(${field.referencedEntityName})" href="${_}{url_update}"><span
+							class="glyphicon glyphicon-circle-arrow-right" onclick='seeForeign("$fn.uncapitalize(${field.referencedEntityName})");'> <s:message code="go" /> </span></a>
 						</div>
 #end 
 				</div>
